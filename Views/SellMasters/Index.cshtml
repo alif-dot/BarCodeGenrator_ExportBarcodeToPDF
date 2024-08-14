@@ -1,0 +1,31 @@
+﻿@model IEnumerable<BarCodeInvoice.Models.SellMaster>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Invoice No</th>
+            <th>Place</th>
+            <th>Car</th>
+            <th>Total VAT</th>
+            <th>Total With VAT</th>
+            @*<th>Barcode</th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.InvoiceNo</td>
+                <td>@item.Place</td>
+                <td>@item.Car</td>
+                <td>@item.TotalVAT</td>
+                <td>@item.TotalWithVAT</td>
+                @*<td>
+                    <img src="@item.Barcode" alt="Barcode for @item.InvoiceNo" />
+                </td>*@
+            </tr>
+        }
+    </tbody>
+</table>
+
+<button onclick="location.href='@Url.Action("ExportBarcodesToPDF", "SellMasters")'">Export</button>

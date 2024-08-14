@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HPLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="SellMasters">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CompanyId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="BranchId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="BusinessIdentificationNumberId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FiscalPeriodId" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="FiscalYearId" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="PartyId" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="InvoiceNo" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="InvoiceNoOld" Type="varchar" MaxLength="100" />
+          <Property Name="IssueDate" Type="datetime" Nullable="false" />
+          <Property Name="IssueTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="DeliveryDate" Type="datetime" Nullable="false" />
+          <Property Name="DeliveryTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="PONumber" Type="varchar" MaxLength="100" />
+          <Property Name="PODate" Type="datetime" />
+          <Property Name="RouteCode" Type="varchar" MaxLength="100" />
+          <Property Name="TermCode" Type="varchar" MaxLength="100" />
+          <Property Name="ManifestNumber" Type="varchar" MaxLength="100" />
+          <Property Name="OrderNumber" Type="varchar" MaxLength="100" />
+          <Property Name="OrderDate" Type="datetime" />
+          <Property Name="Place" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="VehicleId" Type="varchar" MaxLength="128" />
+          <Property Name="Car" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ChallanType" Type="int" />
+          <Property Name="ChallanTypeName" Type="varchar" MaxLength="50" />
+          <Property Name="TotalWithoutVAT" Type="decimal" Precision="38" Scale="12" Nullable="false" />
+          <Property Name="TotalVAT" Type="decimal" Precision="38" Scale="12" Nullable="false" />
+          <Property Name="TotalWithVAT" Type="decimal" Precision="38" Scale="12" Nullable="false" />
+          <Property Name="TotalWithoutSD" Type="decimal" Precision="38" Scale="12" Nullable="false" />
+          <Property Name="TotalSD" Type="decimal" Precision="38" Scale="12" Nullable="false" />
+          <Property Name="Discount" Type="decimal" Precision="38" Scale="12" Nullable="false" />
+          <Property Name="Adjustment" Type="decimal" Precision="38" Scale="12" Nullable="false" />
+          <Property Name="NetAmount" Type="decimal" Precision="38" Scale="12" Nullable="false" />
+          <Property Name="SumActualValue" Type="decimal" Precision="38" Scale="12" />
+          <Property Name="SumAmountCustomerPrice" Type="decimal" Precision="38" Scale="12" />
+          <Property Name="Remarks" Type="varchar" MaxLength="500" />
+          <Property Name="ExportChallan" Type="bit" Nullable="false" />
+          <Property Name="PrintStatus" Type="bit" Nullable="false" />
+          <Property Name="Accept" Type="bit" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="Archive" Type="bit" Nullable="false" />
+          <Property Name="IsVDS" Type="bit" Nullable="false" />
+          <Property Name="VDSAmount" Type="decimal" Precision="38" Scale="12" />
+          <Property Name="VatOneNo" Type="varchar" MaxLength="50" />
+          <Property Name="SalesType" Type="varchar" MaxLength="20" />
+          <Property Name="PartyVATRegNO" Type="varchar" MaxLength="50" />
+          <Property Name="AddedBy" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="AddedDate" Type="datetime" Nullable="false" />
+          <Property Name="AddedFromIP" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" MaxLength="30" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedFromIP" Type="varchar" MaxLength="15" />
+          <Property Name="InvoicePeriodId" Type="varchar" MaxLength="20" />
+          <Property Name="SellContractId" Type="varchar" MaxLength="10" />
+          <Property Name="IsRecurring" Type="bit" />
+          <Property Name="CPC" Type="varchar" MaxLength="50" />
+          <Property Name="OfficeCode" Type="varchar" MaxLength="30" />
+          <Property Name="TotalHDSC" Type="decimal" Precision="38" Scale="12" />
+          <Property Name="PartyCode" Type="varchar" MaxLength="50" />
+          <Property Name="PartyName" Type="varchar" MaxLength="200" />
+          <Property Name="SignatoryId" Type="varchar" MaxLength="40" />
+          <Property Name="TotalTradeValue" Type="decimal" Precision="38" Scale="12" />
+          <Property Name="TotalTradeVAT" Type="decimal" Precision="38" Scale="12" />
+          <Property Name="ExportRate" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="PartyAddress" Type="varchar" MaxLength="500" />
+          <Property Name="PaymentMode" Type="varchar" MaxLength="30" />
+          <Property Name="ReceivedAmount" Type="decimal" Precision="38" Scale="6" />
+          <Property Name="ChangeAmount" Type="decimal" Precision="38" Scale="6" />
+          <Property Name="PartyBranchId" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityContainer Name="HPLModelStoreContainer">
+          <EntitySet Name="SellMasters" EntityType="Self.SellMasters" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HPLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="SellMaster">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CompanyId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BranchId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BusinessIdentificationNumberId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FiscalPeriodId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FiscalYearId" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PartyId" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InvoiceNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InvoiceNoOld" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IssueDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IssueTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="DeliveryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DeliveryTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="PONumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PODate" Type="DateTime" Precision="3" />
+          <Property Name="RouteCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TermCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ManifestNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OrderNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OrderDate" Type="DateTime" Precision="3" />
+          <Property Name="Place" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VehicleId" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Car" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ChallanType" Type="Int32" />
+          <Property Name="ChallanTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TotalWithoutVAT" Type="Decimal" Precision="38" Scale="12" Nullable="false" />
+          <Property Name="TotalVAT" Type="Decimal" Precision="38" Scale="12" Nullable="false" />
+          <Property Name="TotalWithVAT" Type="Decimal" Precision="38" Scale="12" Nullable="false" />
+          <Property Name="TotalWithoutSD" Type="Decimal" Precision="38" Scale="12" Nullable="false" />
+          <Property Name="TotalSD" Type="Decimal" Precision="38" Scale="12" Nullable="false" />
+          <Property Name="Discount" Type="Decimal" Precision="38" Scale="12" Nullable="false" />
+          <Property Name="Adjustment" Type="Decimal" Precision="38" Scale="12" Nullable="false" />
+          <Property Name="NetAmount" Type="Decimal" Precision="38" Scale="12" Nullable="false" />
+          <Property Name="SumActualValue" Type="Decimal" Precision="38" Scale="12" />
+          <Property Name="SumAmountCustomerPrice" Type="Decimal" Precision="38" Scale="12" />
+          <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ExportChallan" Type="Boolean" Nullable="false" />
+          <Property Name="PrintStatus" Type="Boolean" Nullable="false" />
+          <Property Name="Accept" Type="Boolean" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Archive" Type="Boolean" Nullable="false" />
+          <Property Name="IsVDS" Type="Boolean" Nullable="false" />
+          <Property Name="VDSAmount" Type="Decimal" Precision="38" Scale="12" />
+          <Property Name="VatOneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SalesType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PartyVATRegNO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AddedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AddedFromIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedFromIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="InvoicePeriodId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SellContractId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IsRecurring" Type="Boolean" />
+          <Property Name="CPC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OfficeCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TotalHDSC" Type="Decimal" Precision="38" Scale="12" />
+          <Property Name="PartyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PartyName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="SignatoryId" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="TotalTradeValue" Type="Decimal" Precision="38" Scale="12" />
+          <Property Name="TotalTradeVAT" Type="Decimal" Precision="38" Scale="12" />
+          <Property Name="ExportRate" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+          <Property Name="PartyAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentMode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ReceivedAmount" Type="Decimal" Precision="38" Scale="6" />
+          <Property Name="ChangeAmount" Type="Decimal" Precision="38" Scale="6" />
+          <Property Name="PartyBranchId" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="HPLVMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SellMasters" EntityType="Self.SellMaster" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HPLModelStoreContainer" CdmEntityContainer="HPLVMSEntities">
+          <EntitySetMapping Name="SellMasters">
+            <EntityTypeMapping TypeName="HPLModel.SellMaster">
+              <MappingFragment StoreEntitySet="SellMasters">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+                <ScalarProperty Name="BusinessIdentificationNumberId" ColumnName="BusinessIdentificationNumberId" />
+                <ScalarProperty Name="FiscalPeriodId" ColumnName="FiscalPeriodId" />
+                <ScalarProperty Name="FiscalYearId" ColumnName="FiscalYearId" />
+                <ScalarProperty Name="PartyId" ColumnName="PartyId" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="InvoiceNoOld" ColumnName="InvoiceNoOld" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="IssueTime" ColumnName="IssueTime" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
+                <ScalarProperty Name="PONumber" ColumnName="PONumber" />
+                <ScalarProperty Name="PODate" ColumnName="PODate" />
+                <ScalarProperty Name="RouteCode" ColumnName="RouteCode" />
+                <ScalarProperty Name="TermCode" ColumnName="TermCode" />
+                <ScalarProperty Name="ManifestNumber" ColumnName="ManifestNumber" />
+                <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="Place" ColumnName="Place" />
+                <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+                <ScalarProperty Name="Car" ColumnName="Car" />
+                <ScalarProperty Name="ChallanType" ColumnName="ChallanType" />
+                <ScalarProperty Name="ChallanTypeName" ColumnName="ChallanTypeName" />
+                <ScalarProperty Name="TotalWithoutVAT" ColumnName="TotalWithoutVAT" />
+                <ScalarProperty Name="TotalVAT" ColumnName="TotalVAT" />
+                <ScalarProperty Name="TotalWithVAT" ColumnName="TotalWithVAT" />
+                <ScalarProperty Name="TotalWithoutSD" ColumnName="TotalWithoutSD" />
+                <ScalarProperty Name="TotalSD" ColumnName="TotalSD" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Adjustment" ColumnName="Adjustment" />
+                <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+                <ScalarProperty Name="SumActualValue" ColumnName="SumActualValue" />
+                <ScalarProperty Name="SumAmountCustomerPrice" ColumnName="SumAmountCustomerPrice" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="ExportChallan" ColumnName="ExportChallan" />
+                <ScalarProperty Name="PrintStatus" ColumnName="PrintStatus" />
+                <ScalarProperty Name="Accept" ColumnName="Accept" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Archive" ColumnName="Archive" />
+                <ScalarProperty Name="IsVDS" ColumnName="IsVDS" />
+                <ScalarProperty Name="VDSAmount" ColumnName="VDSAmount" />
+                <ScalarProperty Name="VatOneNo" ColumnName="VatOneNo" />
+                <ScalarProperty Name="SalesType" ColumnName="SalesType" />
+                <ScalarProperty Name="PartyVATRegNO" ColumnName="PartyVATRegNO" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="AddedFromIP" ColumnName="AddedFromIP" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedFromIP" ColumnName="UpdatedFromIP" />
+                <ScalarProperty Name="InvoicePeriodId" ColumnName="InvoicePeriodId" />
+                <ScalarProperty Name="SellContractId" ColumnName="SellContractId" />
+                <ScalarProperty Name="IsRecurring" ColumnName="IsRecurring" />
+                <ScalarProperty Name="CPC" ColumnName="CPC" />
+                <ScalarProperty Name="OfficeCode" ColumnName="OfficeCode" />
+                <ScalarProperty Name="TotalHDSC" ColumnName="TotalHDSC" />
+                <ScalarProperty Name="PartyCode" ColumnName="PartyCode" />
+                <ScalarProperty Name="PartyName" ColumnName="PartyName" />
+                <ScalarProperty Name="SignatoryId" ColumnName="SignatoryId" />
+                <ScalarProperty Name="TotalTradeValue" ColumnName="TotalTradeValue" />
+                <ScalarProperty Name="TotalTradeVAT" ColumnName="TotalTradeVAT" />
+                <ScalarProperty Name="ExportRate" ColumnName="ExportRate" />
+                <ScalarProperty Name="PartyAddress" ColumnName="PartyAddress" />
+                <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+                <ScalarProperty Name="ReceivedAmount" ColumnName="ReceivedAmount" />
+                <ScalarProperty Name="ChangeAmount" ColumnName="ChangeAmount" />
+                <ScalarProperty Name="PartyBranchId" ColumnName="PartyBranchId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
